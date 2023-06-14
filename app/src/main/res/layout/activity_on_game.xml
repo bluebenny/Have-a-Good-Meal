@@ -50,25 +50,29 @@
                     android:orientation="horizontal"
                     android:layout_weight="1">
 
-                    <Button
+                    <android.widget.Button
                         android:id="@+id/button_water"
-                        android:text="water"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
 
                         android:gravity="center_horizontal|center_vertical"
+
+
+                        android:background="@drawable/button_water"
 
                         android:layout_weight="1"/>
 
-                    <Button
+                    <android.widget.Button
                         android:id="@+id/button_salt"
-                        android:text="salt"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
 
                         android:gravity="center_horizontal|center_vertical"
+
+
+                        android:background="@drawable/button_salt"
 
                         android:layout_weight="1"/>
 
@@ -94,25 +98,29 @@
                     android:orientation="horizontal"
                     android:layout_weight="1">
 
-                    <Button
+                    <android.widget.Button
                         android:id="@+id/button_carrot"
-                        android:text="carrot"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
 
                         android:gravity="center_horizontal|center_vertical"
+
+
+                        android:background="@drawable/button_carrot"
 
                         android:layout_weight="1"/>
 
-                    <Button
+                    <android.widget.Button
                         android:id="@+id/button_onion"
-                        android:text="onion"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
 
                         android:gravity="center_horizontal|center_vertical"
+
+
+                        android:background="@drawable/button_onion"
 
                         android:layout_weight="1"/>
 
