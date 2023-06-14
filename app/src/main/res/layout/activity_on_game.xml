@@ -131,6 +131,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/next"
             android:text="요리하기"
 
             android:layout_width="match_parent"
