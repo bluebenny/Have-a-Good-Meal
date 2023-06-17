@@ -9,16 +9,48 @@
     android:background="@drawable/background_cooking"
     tools:context=".OnGameActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:text="음식을 만들어보자"
-
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        android:gravity="center_horizontal|center_vertical"
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-        android:layout_weight="1"/>
+            android:gravity="center_horizontal|center_vertical"/>
+
+        <ImageView
+            android:id="@+id/stage_info"
+            android:background="@drawable/stage1_info"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintDimensionRatio="1"
+
+            app:layout_constraintHeight_percent="0.8"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/bowl"/>
+
+        <ImageView
+            android:id="@+id/bowl"
+            android:background="@drawable/bowl"
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
