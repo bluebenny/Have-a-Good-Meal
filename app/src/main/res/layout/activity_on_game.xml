@@ -30,6 +30,7 @@
             android:orientation = "vertical"
             android:layout_width = "match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/background_ingredientscontainer"
             android:layout_weight = "1">
 
             <HorizontalScrollView
@@ -43,6 +44,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck"
+
+                android:paddingTop="16px"
+                android:paddingBottom="4px"
+                android:paddingLeft="36px"
+                android:paddingRight="36px"
 
                 android:layout_weight="1">
 
@@ -198,6 +204,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck"
+
+                android:paddingTop="8px"
+                android:paddingBottom="12px"
+                android:paddingLeft="36px"
+                android:paddingRight="36px"
 
                 android:layout_weight="1">
 
@@ -388,14 +399,27 @@
 
         </LinearLayout>
 
-        <Button
-            android:text="요리하기"
-
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="7">
 
-            android:layout_weight="7" />
+            <android.widget.Button
+                android:id="@+id/next"
+                android:background="@drawable/button_bell"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                app:layout_constraintDimensionRatio="1"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
+
+
 
 </LinearLayout>
