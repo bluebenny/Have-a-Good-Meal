@@ -14,9 +14,21 @@ public class OnGameActivity extends AppCompatActivity {
 
     class RotateImageViewer {
 
-        int[] ids = new int[8];
+        int[] ids = new int[20];
 
         ImageView[] images = new ImageView[] {
+                (ImageView) findViewById(R.id.ingredient20),
+                (ImageView) findViewById(R.id.ingredient19),
+                (ImageView) findViewById(R.id.ingredient18),
+                (ImageView) findViewById(R.id.ingredient17),
+                (ImageView) findViewById(R.id.ingredient16),
+                (ImageView) findViewById(R.id.ingredient15),
+                (ImageView) findViewById(R.id.ingredient14),
+                (ImageView) findViewById(R.id.ingredient13),
+                (ImageView) findViewById(R.id.ingredient12),
+                (ImageView) findViewById(R.id.ingredient11),
+                (ImageView) findViewById(R.id.ingredient10),
+                (ImageView) findViewById(R.id.ingredient9),
                 (ImageView) findViewById(R.id.ingredient8),
                 (ImageView) findViewById(R.id.ingredient7),
                 (ImageView) findViewById(R.id.ingredient6),
@@ -27,15 +39,47 @@ public class OnGameActivity extends AppCompatActivity {
                 (ImageView) findViewById(R.id.ingredient1)
         };
 
+        ImageView[] layerImages = new ImageView[] {
+                (ImageView) findViewById(R.id.ingredient_layer1),
+                (ImageView) findViewById(R.id.ingredient_layer2),
+                (ImageView) findViewById(R.id.ingredient_layer3),
+                (ImageView) findViewById(R.id.ingredient_layer4),
+                (ImageView) findViewById(R.id.ingredient_layer5),
+                (ImageView) findViewById(R.id.ingredient_layer6),
+                (ImageView) findViewById(R.id.ingredient_layer7),
+                (ImageView) findViewById(R.id.ingredient_layer8)
+        };
+
         RotateImageViewer() {}
 
         public void setImage(int id) {
-            for (int i = 7; i > 0; i--)
+            for (int i = 19; i > 0; i--)
                 ids[i] = ids[i - 1];
             ids[0] = id;
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 20; i++)
                 images[i].setImageResource(ids[i]);
+        }
+
+        public void setImage(int id, String layerType) {
+            setImage(id);
+
+            if (layerType.equals("tuna"))
+                layerImages[0].setImageResource(id);
+            if (layerType.equals("meat"))
+                layerImages[1].setImageResource(id);
+            if (layerType.equals("seaweed"))
+                layerImages[2].setImageResource(id);
+            if (layerType.equals("stick"))
+                layerImages[3].setImageResource(id);
+            if (layerType.equals("circle"))
+                layerImages[4].setImageResource(id);
+            if (layerType.equals("cubic"))
+                layerImages[5].setImageResource(id);
+            if (layerType.equals("sauce"))
+                layerImages[6].setImageResource(id);
+            if (layerType.equals("normal"))
+                layerImages[7].setImageResource(id);
         }
 
     }
@@ -74,7 +118,7 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 text.setText("Carrot");
-                rotateImageViewer.setImage(R.drawable.image_carrot);
+                rotateImageViewer.setImage(R.drawable.image_carrot, "stick");
                 score += 10;
             }
         });
@@ -84,7 +128,7 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 text.setText("Onion");
-                rotateImageViewer.setImage(R.drawable.image_onion);
+                rotateImageViewer.setImage(R.drawable.image_onion, "stick");
                 score += 10;
             }
         });
