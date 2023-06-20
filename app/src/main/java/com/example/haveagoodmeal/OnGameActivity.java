@@ -216,7 +216,7 @@ public class OnGameActivity extends AppCompatActivity {
                     0, /* potato */
                     0, /* sweetpotato */
                     0, /* doubanjiang */
-                    0, /* meat */
+                    5, /* meat */
                     0, /* tuna */
                     0, /* vegetable1 */
                     0, /* vegetable2 */
@@ -260,8 +260,8 @@ public class OnGameActivity extends AppCompatActivity {
             {
                     /* stage 2 */
                     0, /* water */
-                    3, /* salt */
-                    4, /* sugar */
+                    3000, /* salt */
+                    2000, /* sugar */
                     0, /* soysauce */
                     0, /* pepperpaste */
                     0, /* pepperpowder */
@@ -293,8 +293,8 @@ public class OnGameActivity extends AppCompatActivity {
             {
                     /* stage 3 */
                     0, /* water */
-                    5, /* salt */
-                    3, /* sugar */
+                    1810, /* salt */
+                    450, /* sugar */
                     0, /* soysauce */
                     0, /* pepperpaste */
                     0, /* pepperpowder */
@@ -317,7 +317,7 @@ public class OnGameActivity extends AppCompatActivity {
                     0, /* potato */
                     0, /* sweetpotato */
                     0, /* doubanjiang */
-                    0, /* meat */
+                    10, /* meat */
                     0, /* tuna */
                     0, /* vegetable1 */
                     0, /* vegetable2 */
