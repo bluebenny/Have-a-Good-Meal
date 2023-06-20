@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,10 +21,31 @@ public class StartActivity extends AppCompatActivity {
 
     private  Button button;
 
+    private String[] stages = {
+            "stage1_clear",
+            "stage2_clear",
+            "stage3_clear"
+    };
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        SharedPreferences pref = getSharedPreferences("isFirst", MODE_PRIVATE);
+        boolean first = pref.getBoolean("isFirst", false);
+
+        if (first == false) {
+            Log.d("Is first Time?", "first");
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("isFirst",true);
+            editor.commit();
+            for (int i = 0; i < 3; i++) {
+                StageDB.sp = getSharedPreferences(StageDB.save, MODE_PRIVATE);
+                StageDB.editor = StageDB.sp.edit();
+                StageDB.editor.putBoolean(stages[i], false);
+                StageDB.editor.commit();
+            }
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
