@@ -23,6 +23,7 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         int score = bundle.getInt("score");
+        score = Math.round(score / 100f);
 
         next = findViewById(R.id.button_next);
         next.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +32,17 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(new Intent(ResultActivity.this, OnGameActivity.class));
             }
         });
+
+        nextStage = findViewById(R.id.button_nextstage);
+        nextStage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        if (score == 100) {
+            nextStage.setVisibility(View.VISIBLE);
+        }
 
         textScore = findViewById(R.id.text_score);
         if (score < 0)
