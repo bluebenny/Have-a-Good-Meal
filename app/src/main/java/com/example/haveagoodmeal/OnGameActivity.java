@@ -378,7 +378,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("soysauce", ingredientValues.get("soysauce") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_soysauce);
+                    rotateImageViewer.setImage(R.drawable.image_soysauce, "sauce");
                 }
             });
 
@@ -387,7 +387,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("pepperpaste", ingredientValues.get("pepperpaste") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_pepperpaste);
+                    rotateImageViewer.setImage(R.drawable.image_pepperpaste, "sauce");
                 }
             });
 
@@ -405,7 +405,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("syrup", ingredientValues.get("syrup") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_syrup);
+                    rotateImageViewer.setImage(R.drawable.image_syrup, "sauce");
                 }
             });
 
@@ -414,7 +414,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("oligo", ingredientValues.get("oligo") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_oligo);
+                    rotateImageViewer.setImage(R.drawable.image_oligo, "sauce");
                 }
             });
 
@@ -423,7 +423,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("sesameoil", ingredientValues.get("sesameoil") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_sesameoil);
+                    rotateImageViewer.setImage(R.drawable.image_sesameoil, "sauce");
                 }
             });
 
@@ -441,7 +441,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("mayo", ingredientValues.get("mayo") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_mayo);
+                    rotateImageViewer.setImage(R.drawable.image_mayo, "sauce");
                 }
             });
 
@@ -450,7 +450,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("jam", ingredientValues.get("jam") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_jam);
+                    rotateImageViewer.setImage(R.drawable.image_jam, "sauce");
                 }
             });
 
@@ -459,7 +459,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("carrot", ingredientValues.get("carrot") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_carrot);
+                    rotateImageViewer.setImage(R.drawable.image_carrot, "stick");
                 }
             });
 
@@ -468,7 +468,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("onion", ingredientValues.get("onion") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_onion);
+                    rotateImageViewer.setImage(R.drawable.image_onion, "stick");
                 }
             });
 
@@ -477,7 +477,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("greenonion", ingredientValues.get("greenonion") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_greenonion);
+                    rotateImageViewer.setImage(R.drawable.image_greenonion, "stick");
                 }
             });
 
@@ -486,7 +486,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("leek", ingredientValues.get("leek") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_leek);
+                    rotateImageViewer.setImage(R.drawable.image_leek, "stick");
                 }
             });
 
@@ -495,7 +495,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("tofu", ingredientValues.get("tofu") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_tofu);
+                    rotateImageViewer.setImage(R.drawable.image_tofu, "cubic");
                 }
             });
 
@@ -504,7 +504,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("cucumber", ingredientValues.get("cucumber") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_cucumber);
+                    rotateImageViewer.setImage(R.drawable.image_cucumber, "circle");
                 }
             });
 
@@ -513,7 +513,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("tomato", ingredientValues.get("tomato") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_tomato);
+                    rotateImageViewer.setImage(R.drawable.image_tomato, "circle");
                 }
             });
 
@@ -522,7 +522,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("egg", ingredientValues.get("egg") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_egg);
+                    rotateImageViewer.setImage(R.drawable.image_egg, "circle");
                 }
             });
 
@@ -531,7 +531,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("seaweed", ingredientValues.get("seaweed") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_seaweed);
+                    rotateImageViewer.setImage(R.drawable.image_seaweed, "seaweed");
                 }
             });
 
@@ -540,7 +540,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("potato", ingredientValues.get("potato") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_potato);
+                    rotateImageViewer.setImage(R.drawable.image_potato, "cubic");
                 }
             });
 
@@ -549,7 +549,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("sweetpotato", ingredientValues.get("sweetpotato") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_sweetpotato);
+                    rotateImageViewer.setImage(R.drawable.image_sweetpotato, "cubic");
                 }
             });
 
@@ -558,7 +558,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("doubanjiang", ingredientValues.get("doubanjiang") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_doubanjiang);
+                    rotateImageViewer.setImage(R.drawable.image_doubanjiang, "sauce");
                 }
             });
 
@@ -567,7 +567,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("meat", ingredientValues.get("meat") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_meat);
+                    rotateImageViewer.setImage(R.drawable.image_meat, "meat");
                 }
             });
 
@@ -576,7 +576,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("tuna", ingredientValues.get("tuna") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_tuna);
+                    rotateImageViewer.setImage(R.drawable.image_tuna, "tuna");
                 }
             });
 
@@ -585,7 +585,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("vegetable1", ingredientValues.get("vegetable1") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_vegetable1);
+                    rotateImageViewer.setImage(R.drawable.image_vegetable1, "stick");
                 }
             });
 
@@ -594,7 +594,7 @@ public class OnGameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ingredientValues.put("vegetable2", ingredientValues.get("vegetable2") + 1);
-                    rotateImageViewer.setImage(R.drawable.image_vegetable2);
+                    rotateImageViewer.setImage(R.drawable.image_vegetable2, "stick");
                 }
             });
 
