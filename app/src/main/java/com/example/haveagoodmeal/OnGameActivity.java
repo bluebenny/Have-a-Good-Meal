@@ -280,13 +280,16 @@ public class OnGameActivity extends AppCompatActivity {
             }
     };
 
-    Integer score = 0;
     private static int stage = 1;
+    private ImageView stageInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_game);
+
+        StageDB.sp = getSharedPreferences(StageDB.save, MODE_PRIVATE);
+        StageDB.editor = StageDB.sp.edit();
 
         RotateImageViewer rotateImageViewer = new RotateImageViewer();
 
@@ -548,6 +551,20 @@ public class OnGameActivity extends AppCompatActivity {
             });
 
         }
+
+        stageInfo = findViewById(R.id.stage_info);
+        if (StageDB.sp.getBoolean("stage2_clear", true)) stage = 3;
+        else if (StageDB.sp.getBoolean("stage1_clear", true)) stage = 2;
+        else stage = 1;
+
+        if (stage == 3)
+            stageInfo.setImageResource(R.drawable.stage3_info);
+        if (stage == 2)
+            stageInfo.setImageResource(R.drawable.stage2_info);
+        if (stage == 1)
+            stageInfo.setImageResource(R.drawable.stage1_info);
+
+
 
         Button next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
