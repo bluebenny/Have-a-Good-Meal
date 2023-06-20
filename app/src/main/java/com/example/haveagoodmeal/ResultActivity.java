@@ -20,6 +20,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         int score = bundle.getInt("score");
