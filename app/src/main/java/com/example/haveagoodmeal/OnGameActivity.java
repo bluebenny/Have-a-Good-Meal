@@ -7,12 +7,41 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class OnGameActivity extends AppCompatActivity {
+
+    class RotateImageViewer {
+
+        int[] ids = new int[8];
+
+        ImageView[] images = new ImageView[] {
+                (ImageView) findViewById(R.id.ingredient8),
+                (ImageView) findViewById(R.id.ingredient7),
+                (ImageView) findViewById(R.id.ingredient6),
+                (ImageView) findViewById(R.id.ingredient5),
+                (ImageView) findViewById(R.id.ingredient4),
+                (ImageView) findViewById(R.id.ingredient3),
+                (ImageView) findViewById(R.id.ingredient2),
+                (ImageView) findViewById(R.id.ingredient1)
+        };
+
+        RotateImageViewer() {}
+
+        public void setImage(int id) {
+            for (int i = 7; i > 0; i--)
+                ids[i] = ids[i - 1];
+            ids[0] = id;
+
+            for (int i = 0; i < 8; i++)
+                images[i].setImageResource(ids[i]);
+        }
+
+    }
 
     private static final int NUM_OF_INGREDIENTS = 28;
     private static final String[] ingredientNames = {
@@ -251,12 +280,15 @@ public class OnGameActivity extends AppCompatActivity {
             }
     };
 
+    Integer score = 0;
     private static int stage = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_game);
+
+        RotateImageViewer rotateImageViewer = new RotateImageViewer();
 
         Map<String, Integer> ingredientValues = new HashMap<>(NUM_OF_INGREDIENTS);
         for (String str : ingredientNames)
@@ -269,7 +301,6 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ingredientValues.put("water", ingredientValues.get("water") + 1);
-                text.setText("water");
             }
         });
 
@@ -278,7 +309,7 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ingredientValues.put("salt", ingredientValues.get("salt") + 1);
-                text.setText("salt");
+                rotateImageViewer.setImage(R.drawable.image_salt);
             }
         });
 
@@ -287,7 +318,7 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ingredientValues.put("carrot", ingredientValues.get("carrot") + 1);
-                text.setText("carrot");
+                rotateImageViewer.setImage(R.drawable.image_carrot);
             }
         });
 
@@ -296,7 +327,7 @@ public class OnGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ingredientValues.put("onion", ingredientValues.get("onion") + 1);
-                text.setText("onion");
+                rotateImageViewer.setImage(R.drawable.image_onion);
             }
         });
 
