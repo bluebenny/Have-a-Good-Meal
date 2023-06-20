@@ -15,6 +15,12 @@ public class ResultActivity extends AppCompatActivity {
     private Button next, nextStage;
     private TextView textScore;
 
+    private String[] stages = {
+            "stage1_clear",
+            "stage2_clear",
+            "stage3_clear"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +31,8 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        int score = bundle.getInt("score");
-        score = Math.round(score / 100f);
+        int score10000 = bundle.getInt("score");
+        int score100 = Math.round(score10000 / 100f);
 
         next = findViewById(R.id.button_next);
         next.setOnClickListener(new View.OnClickListener() {
@@ -43,18 +49,37 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        if (score == 100) {
+        nextStage = findViewById(R.id.button_nextstage);
+        nextStage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StageDB.sp = getSharedPreferences(StageDB.save, MODE_PRIVATE);
+                StageDB.editor = StageDB.sp.edit();
+
+                for (int i = 0; i < 3; i++) {
+                    if (!(Boolean) StageDB.sp.getBoolean(stages[i], true)) {
+                        Log.i("nextStage", "stage" + i);
+                        StageDB.editor.putBoolean(stages[i], true);
+                        StageDB.editor.commit();
+                        break;
+                    }
+                }
+                startActivity(new Intent(ResultActivity.this, OnGameActivity.class));
+            }
+        });
+
+        if (score10000 == 10000) {
             nextStage.setVisibility(View.VISIBLE);
         }
 
         textScore = findViewById(R.id.text_score);
-        if (score < 0)
+        if (score10000 < 0)
             textScore.setText("이 음식은 형편없군!");
-        if (score == 0)
+        if (score10000 == 0)
             textScore.setText("다시 만들어보자");
-        if (score > 0)
-            textScore.setText("이정도면 " + score + " 그릇은 팔리겠는걸?");
-        if (score == 100)
+        if (score10000 > 0)
+            textScore.setText("이정도면 " + score100 + " 그릇은 팔리겠는걸?");
+        if (score10000 == 10000)
             textScore.setText("완벽한 음식이야!");
 
     }
