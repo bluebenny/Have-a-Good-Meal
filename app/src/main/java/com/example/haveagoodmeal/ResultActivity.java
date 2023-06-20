@@ -68,6 +68,15 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonHome = (Button) findViewById(R.id.button_home);
+        buttonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if (score10000 == 10000) {
             nextStage.setVisibility(View.VISIBLE);
         }

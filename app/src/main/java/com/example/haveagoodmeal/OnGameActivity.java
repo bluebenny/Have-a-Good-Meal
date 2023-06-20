@@ -635,5 +635,14 @@ public class OnGameActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonHome = (Button) findViewById(R.id.button_home);
+        buttonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OnGameActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
